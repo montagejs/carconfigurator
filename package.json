@@ -2,7 +2,7 @@
     "name": "carconfigurator",
     "version": "0.0.0",
     "dependencies": {
-        "montage" : "0.10.x - 0.11.x",
+        "montage" : "0.12.x",
         "vehicle-config" : "0.0.x",
         "m-car" : "0.0.0",
         "c2j" : "0.0.0"
