@@ -80,7 +80,7 @@ exports.Showroom = Montage.create(Component, /** @lends module:"ui/showroom.reel
                 self.configuratorSubstitution.switchComponents[self.vehicle.name] = configurator;
                 self.configuratorSubstitution.switchValue = self.vehicle.name;
             })
-            .end();
+            .done();
         }
     },
 
