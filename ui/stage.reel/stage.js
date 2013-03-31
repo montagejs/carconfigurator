@@ -94,7 +94,7 @@ exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.re
             }
 
             if (this.model) {
-                this.run(this.model);
+                this.run(this.model, this.baseURL);
             }
         }
     },
@@ -113,7 +113,7 @@ exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.re
             this._model = value;
 
             if (this._isComponentExpanded) {
-                this.run(this.model);
+                this.run(this.model, this.baseURL);
             }
         }
     },
@@ -170,8 +170,7 @@ exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.re
     },
 
     run: {
-        value: function(scenePath) {
-
+        value: function(scenePath, baseURL) {
             var readerDelegate = {};
             readerDelegate.loadCompleted = function (scene) {
                 this.collada.scene = scene;
@@ -189,7 +188,7 @@ exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.re
             this.collada.delegate = viewDelegate;
 
             var loader = Object.create(RuntimeTFLoader);
-            loader.initWithPath(scenePath);
+            loader.initWithPath(scenePath, require, baseURL);
             loader.delegate = readerDelegate;
             loader.load(null /* userInfo */, null /* options */);
             this.collada.needsDraw = true;
