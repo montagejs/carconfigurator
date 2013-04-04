@@ -63,7 +63,7 @@ ul, ol {
 
 #montage-app-bootstrapper,
 #montage-app-loader {
-    position: absolute;
+    position: relative;
     width: 100%;
     text-align: center;
     color: #999;
@@ -71,12 +71,9 @@ ul, ol {
     display: none;
 }
 
-#montage-app-bootstrapper {
-    top: 200px;
-}
-
-#montage-app-loader {
-    top: 280px;
+.loading-logo {
+    height: 200px;
+    margin: 60px 0 20px 0;
 }
 
 .montage-app-bootstrapping #montage-app-bootstrapper,
@@ -91,3 +88,5 @@ ul, ol {
 .montage-app-loaded .main {
     visibility: visible;
 }
+
+
