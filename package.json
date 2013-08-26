@@ -1,6 +1,6 @@
 {
     "name": "carconfigurator",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "dependencies": {
         "montage" : "0.12.4",
         "vehicle-config" : "0.0.x",
