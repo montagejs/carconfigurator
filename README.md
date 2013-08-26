@@ -19,7 +19,7 @@ To run the Car Configurator demo locally, you must have Node.js and npm installe
 3. Spin up your preferred HTTP server and point your browser to the associated port.
 
     > During development MontageJS applications rely on XHR to load their various components and modules, which is why you will need a web server to serve the demo.
-    > If you happen to have [minit](https://github.com/montagejs/minit), the Montage Initializer, installed (`npm install minit -g`) you can run `minit serve &` from within the demo directory to set up a server on demand.
+    > If you happen to have [minit](https://github.com/montagejs/minit), the Montage Initializer, installed (`npm install minit -g`) you can run `minit serve` from within the demo directory to set up a server on demand.
 
 
 ## Application Structure
