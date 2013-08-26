@@ -1,41 +1,23 @@
-carconfigurator
-==============
+Car Configurator
+================
 
-This is the Montage app template.
+The Car Configurator example showcases an early implementation of the Montage 3D
+view component and its integration with the rest of a Montage application.
 
-Note: Before working on your app you will need to add montage to it. You can
-do this various ways depending on your version control preferences:
+Installation
+------------
 
-Add Montage as a submodule of the Git repository containing your app:
+You'll need node and npm (http://nodejs.org) to use the npm tool to install dependencies.
 
+Then, after cloning this repository locally:
 ```
 cd carconfigurator
-git init
-git submodule add git@github.com:Motorola-Mobility/montage.git node_modules/montage
+npm install
 ```
 
-or just clone Montage to your app:
+During development Montage applications rely on XHR to load their various
+components and modules; you'll need to have a webserver serve the carconfigurator demo.
 
-```
-git clone git@github.com:Motorola-Mobility/montage.git bob/node_modules/montage
-```
+If you happen to have minit installed (`npm install minit -g`) you can run
+`minit serve` from within the carconfigurator directory to set up a server on demand.
 
-Layout
-------
-
-The template contains the following files and directories:
-
-* `index.html`
-* `package.json` – Describes your app and its dependencies
-* `README.markdown` – This readme. Replace the current content with a description of your app
-* `ui/` – Directory containing all the UI .reel directories.
-  * `main.reel` – The main interface component
-* `core/` – Directory containing all core code for your app.
-* `node_modules/` – Directory containing all npm packages needed, including Montage. Any packages here must be included as `dependencies` in `package.json` for the Montage require to find them.
-* `assets/` – Assets such as global styles and images for your app
-
-Create the following directories if you need them:
-
-* `locale/` – Directory containing localized content.
-* `lib/` – Directory containing other JS libraries. If a library doesn’t support the CommonJS "exports" object it will need to be loaded through a `<script>` tag.
-* `test/` – Directory containing tests for your app.
