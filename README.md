@@ -1,6 +1,8 @@
 Car Configurator
 ================
 
+[Live Demo](http://montagejs.org/apps/carconfigurator/)
+
 The Car Configurator demo showcases an early implementation of the Montage 3D view component and its integration with the rest of a Montage application.
 
 ##Installation
