@@ -41,6 +41,7 @@ divider grey: rgb(145, 144, 136)
     top: 40px;
     position: relative;
     color: black;
+    margin-left: 10px;
 }
 
 .shareButton,
