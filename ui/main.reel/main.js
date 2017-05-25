@@ -43,11 +43,11 @@ var MontageCar = require("m-car/m-car").MontageCar;
     @class module:"ui/main.reel".Main
     @extends module:ui/component.Component
 */
-exports.Main = Montage.create(Component, /** @lends module:"ui/main.reel".Main# */ {
+exports.Main = Component.specialize(/** @lends module:"ui/main.reel".Main# */ {
 
-    didCreate: {
+    constructor: {
         value: function() {
-            this.vehicle = MontageCar.create();
+            this.vehicle = new MontageCar();
         }
     },
 
@@ -74,7 +74,7 @@ exports.Main = Montage.create(Component, /** @lends module:"ui/main.reel".Main# 
         value: null
     },
 
-    prepareForDraw: {
+    enterDocument: {
         value: function() {
             window.addEventListener('beforeunload', this, true);
         }
@@ -86,7 +86,7 @@ exports.Main = Montage.create(Component, /** @lends module:"ui/main.reel".Main# 
                 this.element.classList.remove(this._currentManufacturer);
             }
 
-            var manufacturer = this.getProperty("vehicle.manufacturer")
+            var manufacturer = false; //this.getProperty("vehicle.manufacturer")
             if (manufacturer) {
                 this.element.classList.add(manufacturer);
             }
@@ -126,5 +126,4 @@ exports.Main = Montage.create(Component, /** @lends module:"ui/main.reel".Main# 
             req.send();
         }
     }
-
 });

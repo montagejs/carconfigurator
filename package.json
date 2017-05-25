@@ -1,12 +1,16 @@
 {
-    "name": "carconfigurator",
-    "version": "0.0.1",
-    "dependencies": {
-        "montage" : "0.12.4",
-        "vehicle-config" : "0.0.x",
-        "m-car" : "0.0.0",
-        "c2j" : "0.0.0"
-    },
-    "bundle":["ui/main.reel"],
-    "shard": 4
+  "name": "carconfigurator",
+  "version": "0.0.1",
+  "dependencies": {
+    "mjs-volume": "montagestudio/mjs-volume.git",
+    "m-car": "0.0.0",
+    "c2j": "0.0.0",
+    "matte": "^0.3.0",
+    "montage": "0.12.4",
+    "vehicle-config": "0.0.x"
+  },
+  "bundle": [
+    "ui/main.reel"
+  ],
+  "shard": 4
 }

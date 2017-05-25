@@ -41,7 +41,7 @@ var Montage = require("montage").Montage,
     @class module:"ui/showroom.reel".Main
     @extends module:ui/component.Component
 */
-exports.Showroom = Montage.create(Component, /** @lends module:"ui/showroom.reel".Showroom# */ {
+exports.Showroom = Component.specialize(/** @lends module:"ui/showroom.reel".Showroom# */ {
 
     configuratorSubstitution: {
         value: null
@@ -73,11 +73,11 @@ exports.Showroom = Montage.create(Component, /** @lends module:"ui/showroom.reel
     _loadVehicleViews: {
         value: function() {
             var self = this;
-            require.async(this.vehicle.moduleName + "/configurator.reel")
-            .then(function (exports) {
-                var configurator = exports.Configurator.create();
+            require.async(this.vehicle.moduleName + "/configurator.reel").then(function (exports) {
+                var configurator = new exports.Configurator();
                 configurator.vehicle = self._vehicle;
-                self.configuratorSubstitution.switchComponents[self.vehicle.name] = configurator;
+                
+                self.configuratorSubstitution._switchElements[self.vehicle.name] = configurator;
                 self.configuratorSubstitution.switchValue = self.vehicle.name;
             })
             .done();
@@ -92,7 +92,7 @@ exports.Showroom = Montage.create(Component, /** @lends module:"ui/showroom.reel
         }
     },
 
-    prepareForDraw: {
+    enterDocument: {
         value: function() {
             this.addEventListener('pick', this, false);
         }

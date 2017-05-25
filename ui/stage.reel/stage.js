@@ -35,20 +35,20 @@ POSSIBILITY OF SUCH DAMAGE.
 */
 var Montage = require("montage").Montage,
     Component = require("montage/ui/component").Component;
-var Utilities = require("c2j/runtime/utilities").Utilities;
-var Node = require("c2j/runtime/node").Node;
-var Camera = require("c2j/runtime/camera").Camera;
-var View = require("c2j/runtime/view").View;
-var GLSLProgram = require("c2j/runtime/glsl-program").GLSLProgram;
-var RuntimeTFLoader = require("c2j/runtime/runtime-tf-loader").RuntimeTFLoader;
-var glMatrix = require("c2j/runtime/dependencies/gl-matrix").glMatrix;
+var Utilities = require("mjs-volume/runtime/utilities").Utilities;
+var Node = require("mjs-volume/runtime/node").Node;
+var Camera = require("mjs-volume/runtime/camera").Camera;
+var Scene = require("mjs-volume/runtime/scene").Scene;
+var GLSLProgram = require("mjs-volume/runtime/glsl-program").GLSLProgram;
+var RuntimeTFLoader = require("mjs-volume/runtime/runtime-tf-loader").RuntimeTFLoader;
+var glMatrix = require("mjs-volume/runtime/dependencies/gl-matrix").glMatrix;
 
 /**
     Description TODO
     @class module:"montage/ui/stage.reel".Stage
     @extends module:montage/ui/component.Component
 */
-exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.reel".Stage# */ {
+exports.Stage = Component.specialize(/** @lends module:"montage/ui/stage.reel".Stage# */ {
 
     _vehicle: {
         value: null
@@ -148,7 +148,7 @@ exports.Stage = Montage.create(Component, /** @lends module:"montage/ui/stage.re
     height: {value: null},
     width: {value: null},
 
-    prepareForDraw: {
+    enterDocument: {
         value: function() {
             if (this.fillViewport) {
                 window.addEventListener("resize", this, true);

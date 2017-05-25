@@ -33,20 +33,8 @@ POSSIBILITY OF SUCH DAMAGE.
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>carconfigurator</title>
-
     <link rel="stylesheet" href="assets/style/style.css" />
     <link rel="stylesheet" href="assets/style/mcar/mcar.css" />
-
-    <script>
-        // Workaround for window.Touch on desktop browsers
-        // NOTE This is a hotfix from montage 2d9dada66ea73de571fbc2f2ca2bcc83b6f545ef
-        // specifically for the presence of window.Touch as of Chrome 29
-        // This can be removed upon updating this application to Montage ~v0.13.4
-        if (!("ontouchstart" in window)) {
-            window.Touch = null;
-        }
-    </script>
-
     <script src="node_modules/montage/montage.js"></script>
     <script type="text/montage-serialization">
     {
@@ -55,18 +43,11 @@ POSSIBILITY OF SUCH DAMAGE.
         }
     }
     </script>
-
-    <style type="text/css">
-        .loading {
-            position: absolute;
-        }
-    </style>
-
 </head>
 <body>
     <div id="montage-app-bootstrapper">
         <img src="assets/style/mcar/montage-logo-gradients.svg" alt="logo" />
     </div>
-    <div id="montage-app-loader">Loading..</div>
+    <div id="montage-app-loader">Loading...</div>
 </body>
 </html>
